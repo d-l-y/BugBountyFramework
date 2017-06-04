@@ -12,7 +12,7 @@ BRUTE_FORCE_ENABLED = False
 
 ##database config
 
-DATABASE_FILE = 'yahootest'
+DATABASE_FILE = 'test.sqlite'
 
 ##Dirbuster config
 FILE_LIST = 'common.txt'
