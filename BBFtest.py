@@ -52,7 +52,7 @@ while True:
         
     if ACTION[0] == 'show':
         for result in query:
-            print result
+            print '\t'+result
 #####BURP ADD TEST#####
     if ACTION[0] == 'burp':
        proxies = {

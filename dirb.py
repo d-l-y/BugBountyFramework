@@ -2,8 +2,7 @@ import re
 import subprocess
 import config
 from concurrent.futures import ThreadPoolExecutor,as_completed
-from dbsMgr import dbsMgr
-from handleUrl import HandleUrl
+from dbsMgr import DbsMgr
 
 class dirb():
 	def __init__(self):
@@ -24,18 +23,22 @@ class dirb():
                 print '[+]Running dirb with wordlist: '+config.FILE_LIST
 		tpool = ThreadPoolExecutor(config.DIRB_THREADS)
 		futures = [tpool.submit(self.start,d) for d in domains]
-        #
-        #wait for threads to finish up
-        #
-        tpool.shutdown(True)
+		#
+		#wait for threads to finish up
+		#
+		tpool.shutdown(True)
 
-        #
-        #insert found urls into databse
-        #TODO fix
-        #
-        print '[+]Adding following URLs to database:'
-        source = 'dirb'
-        for u in self.urls:
-                print u
-                self.dbs.insert('urls',[u,source])
-        print '[+]Added '+str(len(self.urls))+' URLs to database.'
+		#
+		#insert found urls into databse
+		#TODO add url hash to db??
+		#
+		print '[+]Found some directories!'
+		print '[+]Adding following URLs to database:'
+		source = 'dirb'
+		if self.urls:
+			for u in self.urls:
+				self.dbs.insert('urls',[u,source,'NULL'])
+				print u
+			print '[+]Added '+str(len(self.urls))+' URLs to database.'
+		if not self.urls:
+			print '[-]No directories found'
