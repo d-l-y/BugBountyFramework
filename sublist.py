@@ -1,5 +1,6 @@
 import sublist3r
 from Domain import Domains
+import config
 
 class Sublist():
     '''Handle running sublist3r on list of domains and pass discovered domains
@@ -15,7 +16,7 @@ class Sublist():
         self.ports = None
         self.silent = True
         self.verbose = False
-        self.enable_bruteforce = False
+        self.enable_bruteforce = config.BRUTE_FORCE_ENABLED
         self.engines = None
         self.foundDomains = []
 

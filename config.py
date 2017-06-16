@@ -7,7 +7,7 @@ REQUESTS_THREADS = 60
 ###Sublist3r config
 
 SUBLISTER_THREADS = 40
-BRUTE_FORCE_ENABLED = False
+BRUTE_FORCE_ENABLED = True
 
 
 ##database config

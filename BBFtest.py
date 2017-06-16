@@ -60,7 +60,7 @@ while True:
                   'https': 'http://127.0.0.1:8080'
                   }
        for d in query:
-           requests.get('http://'+d, proxies=proxies, verify=False)
+           requests.get('https://'+d, proxies=proxies, verify=False)
        
 ##########
         

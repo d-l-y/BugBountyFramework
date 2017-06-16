@@ -15,7 +15,7 @@ class dirb():
 	def start(self,domain):
 		output = subprocess.check_output('dirb http://'+domain+' \"'+self.wordlist+'\" -S', shell=True)
 		for i in re.findall(r'\+ (.*?) \(C',output):
-			self.urls.append(i)
+			self.urls.append(unicode(i))
 	#
 	#run threads for dirb
 	#
