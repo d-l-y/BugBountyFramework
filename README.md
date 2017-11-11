@@ -2,8 +2,8 @@ setdb - choose or create the database file. usage: setdb <path to file>
 
 addscope - add comma seperated(no spaces) list to scope (wildcards allowed). usage: addscope *.example.com,*.google.com
 
-setquery - setquery sets query to results of "SELECT \<column\> FROM \<tablename\> WHERE <column> LIKE %<string>%"
-           usage: setquery <column> <tablename> <column> [<string>] (<string> is optional)
+setquery - setquery sets query to results of "SELECT \<column\> FROM \<tablename\> WHERE \<column\> LIKE %\<string\>%"
+           usage: setquery \<column\> \<tablename\> \<column\> [\<string\>] (\<string\> is optional)
 
 show - shows the results of the current query.
 
