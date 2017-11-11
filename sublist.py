@@ -1,6 +1,7 @@
 import sublist3r
 from Domain import Domains
 import config
+from termcolor import colored
 
 class Sublist():
     '''Handle running sublist3r on list of domains and pass discovered domains
@@ -18,13 +19,15 @@ class Sublist():
         self.verbose = False
         self.enable_bruteforce = config.BRUTE_FORCE_ENABLED
         self.engines = None
+	self.takeover_check = config.TAKEOVER_CHECK
         self.foundDomains = []
+
 
 #
 #run sublist3r on each domain and append found subdomains to self.foundDomains
 #cast foundDomains as set() call Domains.verify()
 #
-    def run(self,domains):
+    def run(self,domains,dbsfile):
         if domains:
             scopelist = []
             nonwild = []
@@ -32,10 +35,10 @@ class Sublist():
                 if '*' in domain:
                     scopelist.append(domain.strip('*.'))
             for domain in scopelist:
-                print '[+]Currently Running sublist3r on: '+domain
+		print colored('[-] Running sublist3r on '+domain+'...','blue')
                 subdomains = sublist3r.main(domain, self.no_threads, self.savefile,
-                                    self.ports, self.silent, self.verbose, self.enable_bruteforce,
+                                    self.ports, self.silent, self.verbose, self.enable_bruteforce,self.takeover_check,
                                     self.engines)
                 self.foundDomains += subdomains
             self.foundDomains = set(self.foundDomains)
-            Domains(self.foundDomains).verify()
+            Domains(self.foundDomains,dbsfile).verify()

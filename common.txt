@@ -1,3 +1,7 @@
+id
+my
+sg
+th
 cgi-bin
 images
 admin
@@ -5490,7 +5494,7 @@ yaolan
 ygptemp
 youraccount
 zend
-£º
+\A3\BA
 34
 categorypath
 hook
@@ -6248,7 +6252,7 @@ xmlsrv
 xt
 zdjecia
 zh-hans
-¡¡¡¡
+\A1\A1\A1\A1
 49
 65
 68
@@ -10997,7 +11001,7 @@ zbblock
 zero
 zf
 zw
-Â
+\C2
 103
 106
 115
@@ -15509,7 +15513,7 @@ zs
 ~a
 ~admin
 ~site
-¸´¼ş
+\B8\B4\BC\FE
 ×™×
 1168
 1187
@@ -19817,7 +19821,7 @@ zubehoer
 ~mike
 ~r
 ~sys~
-”
+\94
 é™¤å€™é€‰
 é™¤æŠ•ç¥¨
 ä¾µæƒ
